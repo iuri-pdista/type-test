@@ -10,8 +10,8 @@ namespace type_test
         {
             Console.Clear();
             string apiQuote = await QuoteShow.showQuote();
-            int quoteLength = apiQuote.Length;
             var splitQuote = apiQuote.Split(" ");
+            int quoteLength = splitQuote.Length;
             string userTry = Console.ReadLine().ToString();
             int userTryLength = userTry.Length;
             var userTrySplit = userTry.Split(" ");
