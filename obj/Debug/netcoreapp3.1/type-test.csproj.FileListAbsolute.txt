@@ -1,0 +1,13 @@
+/home/iuri/Programming/type-test/bin/Debug/netcoreapp3.1/type-test
+/home/iuri/Programming/type-test/bin/Debug/netcoreapp3.1/type-test.deps.json
+/home/iuri/Programming/type-test/bin/Debug/netcoreapp3.1/type-test.runtimeconfig.json
+/home/iuri/Programming/type-test/bin/Debug/netcoreapp3.1/type-test.runtimeconfig.dev.json
+/home/iuri/Programming/type-test/bin/Debug/netcoreapp3.1/type-test.dll
+/home/iuri/Programming/type-test/bin/Debug/netcoreapp3.1/type-test.pdb
+/home/iuri/Programming/type-test/obj/Debug/netcoreapp3.1/type-test.csprojAssemblyReference.cache
+/home/iuri/Programming/type-test/obj/Debug/netcoreapp3.1/type-test.AssemblyInfoInputs.cache
+/home/iuri/Programming/type-test/obj/Debug/netcoreapp3.1/type-test.AssemblyInfo.cs
+/home/iuri/Programming/type-test/obj/Debug/netcoreapp3.1/type-test.csproj.CoreCompileInputs.cache
+/home/iuri/Programming/type-test/obj/Debug/netcoreapp3.1/type-test.dll
+/home/iuri/Programming/type-test/obj/Debug/netcoreapp3.1/type-test.pdb
+/home/iuri/Programming/type-test/obj/Debug/netcoreapp3.1/type-test.genruntimeconfig.cache
