@@ -6,4 +6,8 @@
     <RootNamespace>type_test</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="refit" Version="5.1.67" />
+  </ItemGroup>
+
 </Project>
