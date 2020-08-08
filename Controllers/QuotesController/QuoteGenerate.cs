@@ -17,5 +17,13 @@ namespace type_test.Controllers {
                 return null;
             }
         }
+
+        public static QuoteResponse QuotePickRand(List<QuoteResponse> QuoteList){
+            Random rndNumber =  new Random();
+            int rndPosition = rndNumber.Next(1, 1647);
+            return QuoteList[rndPosition];
+        }
     }
+
+    
 }
