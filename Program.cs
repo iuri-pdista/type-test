@@ -15,9 +15,9 @@ namespace type_test
             DateTime start = new DateTime();
             string apiQuote = QuoteShow.showQuote(quoteList);
             start = DateTime.Now;
-            DateTime end = TypeChallenge.RecordTry(apiQuote);
+            TypeChallenge.RecordTry(apiQuote);
             ResultStats totalTime =  new ResultStats();
-            totalTime.GetTotalTime(start, end);
+            totalTime.GetTotalTime(start);
         }
     }
 }

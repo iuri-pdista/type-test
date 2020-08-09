@@ -19,7 +19,6 @@ namespace type_test.Controllers {
                 List<decimal> listOfResults = this.GetResults();
                 Console.WriteLine($"The quote had: {this.quoteSize} words\nand you typed correctly: {this.numberOfRightWords}");
                 Console.WriteLine($"Therefore your accuracy was: {listOfResults[0]}%");
-                Console.WriteLine($"Your total-time was: {this.totalElapsedTime}");
             }
             catch (Exception ex){
                 Console.WriteLine(ex);
@@ -44,9 +43,11 @@ namespace type_test.Controllers {
             return accuracy;
         }
 
-        public void GetTotalTime (DateTime start, DateTime end) {
-            Console.WriteLine($"inicio {start} Fim {end}");
+        public void GetTotalTime (DateTime start) {
+            DateTime end =  new DateTime();
+            end =  DateTime.Now;
             this.totalElapsedTime = end.Subtract(start);
+            Console.WriteLine($"Your total-time was: {this.totalElapsedTime}");
         }
     }
 }
