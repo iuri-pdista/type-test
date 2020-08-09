@@ -27,6 +27,7 @@ namespace type_test.Controllers {
         private List<decimal> GetResults () {
             try{
                 List<decimal> resultsList = new List<decimal>();
+                // todo fix accuracy bug
                 decimal accuracy = this.GetAccuracy(this.numberOfRightWords, this.quoteSize);
                 resultsList.Add(accuracy);
                 // todo implement logic to calculate time
