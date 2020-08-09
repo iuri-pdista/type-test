@@ -10,7 +10,8 @@ namespace type_test.Controllers{
             int userTryLength = userTry.Length;
             var userTrySplit = userTry.Split(" ");
             bool isUserCorrect = ProccessTry(splitQuote, userTrySplit);
-            TypeChallengeModel newTry = new TypeChallengeModel(quote, userTry, isUserCorrect);
+            Console.WriteLine(userTry);
+            TypeChallengeModel.SetNewTry(quote, userTry, isUserCorrect);
             ResultStats results = new ResultStats(quoteLength, userTryLength);
             results.ShowResults();
         }
