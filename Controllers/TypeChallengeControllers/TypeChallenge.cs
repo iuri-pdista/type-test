@@ -17,11 +17,9 @@ namespace type_test.Controllers{
         }
         private static int ProccessTry (string[] splitQuote, string[] userTrySplit) {
             int count = 0;
-            Console.WriteLine(splitQuote.Length);
             for (int i = 0; i < splitQuote.Length; i++){
                 if (splitQuote[i] == userTrySplit[i]){
                     count += 1;
-                    Console.WriteLine(count);
                 }
             }
             return count;
