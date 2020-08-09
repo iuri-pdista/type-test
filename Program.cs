@@ -12,8 +12,12 @@ namespace type_test
         {
             Console.Clear();
             List<QuoteResponse> quoteList = await QuoteGenerate.QuoteListGenerator();
+            DateTime start = new DateTime();
             string apiQuote = QuoteShow.showQuote(quoteList);
-            TypeChallenge.RecordTry(apiQuote);
+            start = DateTime.Now;
+            DateTime end = TypeChallenge.RecordTry(apiQuote);
+            ResultStats totalTime =  new ResultStats();
+            totalTime.GetTotalTime(start, end);
         }
     }
 }
