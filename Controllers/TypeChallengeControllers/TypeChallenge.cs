@@ -3,7 +3,9 @@ using type_test.Models;
 
 namespace type_test.Controllers{
     public static class TypeChallenge{
-        public static void RecordTry (string quote) {
+        public static DateTime RecordTry (string quote) {
+            DateTime end = new DateTime();
+            end = DateTime.Now;
             var splitQuote = quote.Split(" ");
             int quoteLength = splitQuote.Length;
             string userTry = Console.ReadLine().ToString();
@@ -13,6 +15,7 @@ namespace type_test.Controllers{
             TypeChallengeModel.SetNewTry(quote, userTry, isUserCorrect);
             ResultStats results = new ResultStats(quoteLength, userTryLength);
             results.ShowResults();
+            return end;
         }
         private static bool ProccessTry (string[] splitQuote, string[] userTrySplit) {
             decimal count = 0;

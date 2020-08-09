@@ -7,9 +7,10 @@ namespace type_test.Controllers {
             this.quoteSize = QuoteSize;
             this.numberOfRightWords = NumberOfRightWords;
         }
-        
+        public ResultStats (){ }
         int quoteSize;
         int numberOfRightWords;
+        TimeSpan totalElapsedTime;
         
         // todo implement cronometer
         
@@ -18,7 +19,7 @@ namespace type_test.Controllers {
                 List<decimal> listOfResults = this.GetResults();
                 Console.WriteLine($"The quote had: {this.quoteSize} words\nand you typed correctly: {this.numberOfRightWords}");
                 Console.WriteLine($"Therefore your accuracy was: {listOfResults[0]}%");
-                // cronometer Console.WriteLine($"Your total-time was: {listOfResults[1]}");
+                Console.WriteLine($"Your total-time was: {this.totalElapsedTime}");
             }
             catch (Exception ex){
                 Console.WriteLine(ex);
@@ -28,10 +29,8 @@ namespace type_test.Controllers {
         private List<decimal> GetResults () {
             try{
                 List<decimal> resultsList = new List<decimal>();
-                // todo fix accuracy bug
                 decimal accuracy = this.GetAccuracy(this.numberOfRightWords, this.quoteSize);
                 resultsList.Add(accuracy);
-                // todo implement logic to calculate time
                 return resultsList;
             }
             catch(Exception ex){
@@ -43,6 +42,11 @@ namespace type_test.Controllers {
         private decimal GetAccuracy(int totalRightWords, int sizeQuote){
             decimal accuracy = (totalRightWords / quoteSize) * 100;
             return accuracy;
+        }
+
+        public void GetTotalTime (DateTime start, DateTime end) {
+            Console.WriteLine($"inicio {start} Fim {end}");
+            this.totalElapsedTime = end.Subtract(start);
         }
     }
 }
