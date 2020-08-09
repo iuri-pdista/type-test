@@ -7,10 +7,9 @@ namespace type_test.Controllers{
             var splitQuote = quote.Split(" ");
             int quoteLength = splitQuote.Length;
             string userTry = Console.ReadLine().ToString();
-            int userTryLength = userTry.Length;
             var userTrySplit = userTry.Split(" ");
+            int userTryLength = userTrySplit.Length;
             bool isUserCorrect = ProccessTry(splitQuote, userTrySplit);
-            Console.WriteLine(userTry);
             TypeChallengeModel.SetNewTry(quote, userTry, isUserCorrect);
             ResultStats results = new ResultStats(quoteLength, userTryLength);
             results.ShowResults();

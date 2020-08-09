@@ -16,7 +16,8 @@ namespace type_test.Controllers {
         public void ShowResults (){
             try{
                 List<decimal> listOfResults = this.GetResults();
-                Console.WriteLine($"Your accuracy was: {listOfResults[0]}");
+                Console.WriteLine($"The quote had: {this.quoteSize} words\nand you typed correctly: {this.numberOfRightWords}");
+                Console.WriteLine($"Therefore your accuracy was: {listOfResults[0]}%");
                 // cronometer Console.WriteLine($"Your total-time was: {listOfResults[1]}");
             }
             catch (Exception ex){
