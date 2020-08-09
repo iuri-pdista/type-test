@@ -14,17 +14,28 @@ namespace type_test.Controllers {
         // todo implement cronometer
         
         public void ShowResults (){
-            List<decimal> listOfResults = GetResults();
-            Console.WriteLine($"Your accuracy was: {listOfResults[0]}");
-            // cronometer Console.WriteLine($"Your total-time was: {listOfResults[1]}");
+            try{
+                List<decimal> listOfResults = this.GetResults();
+                Console.WriteLine($"Your accuracy was: {listOfResults[0]}");
+                // cronometer Console.WriteLine($"Your total-time was: {listOfResults[1]}");
+            }
+            catch (Exception ex){
+                Console.WriteLine(ex);
+            }
         }
 
         private List<decimal> GetResults () {
-            List<decimal> resultsList = null;
-            decimal accuracy = GetAccuracy(this.numberOfRightWords, this.quoteSize);
-            resultsList.Add(accuracy);
-            // todo implement logic to calculate time
-            return resultsList;
+            try{
+                List<decimal> resultsList = new List<decimal>();
+                decimal accuracy = this.GetAccuracy(this.numberOfRightWords, this.quoteSize);
+                resultsList.Add(accuracy);
+                // todo implement logic to calculate time
+                return resultsList;
+            }
+            catch(Exception ex){
+                Console.WriteLine(ex);
+                return null;
+            }
         }
 
         private decimal GetAccuracy(int totalRightWords, int sizeQuote){
