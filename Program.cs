@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using type_test.Controllers;
+using type_test.Models;
 
 namespace type_test
 {
@@ -9,25 +11,9 @@ namespace type_test
         static async Task Main(string[] args)
         {
             Console.Clear();
-            string apiQuote = await QuoteShow.showQuote();
-            var splitQuote = apiQuote.Split(" ");
-            int quoteLength = splitQuote.Length;
-            string userTry = Console.ReadLine().ToString();
-            int userTryLength = userTry.Length;
-            var userTrySplit = userTry.Split(" ");
-            int count = 0;
-            foreach( string quoteWords in splitQuote ) {
-                foreach( string userTryWords in userTrySplit ){
-                    if( quoteWords == userTryWords ){
-                        count += 1;
-                    }
-                }
-            }
-            Console.WriteLine($"{count} {quoteLength}");
-
-            if (count == quoteLength) Console.WriteLine("Congrats you nailed"); 
-            
-            else Console.WriteLine("You failed, need more training"); 
+            List<QuoteResponse> quoteList = await QuoteGenerate.QuoteListGenerator();
+            string apiQuote = QuoteShow.showQuote(quoteList);
+            TypeChallenge.RecordTry(apiQuote);
         }
     }
 }
