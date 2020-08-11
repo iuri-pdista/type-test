@@ -29,11 +29,11 @@ namespace type_test.Controllers{
             int count = CompareTry(quoteSplit, splitUserTry);
             if ( (count >= (splitQuoteLength)/2) && (count <= splitQuoteLength) ) {
                 Console.WriteLine("Congrats you nailed");
-                return true;
+                return new Tuple<bool, int>(true, count);
             }
             else{
                 Console.WriteLine( "You failed, need more training" );
-                return false;
+                return new Tuple<bool, int>(false, count);
             }
         }
 
