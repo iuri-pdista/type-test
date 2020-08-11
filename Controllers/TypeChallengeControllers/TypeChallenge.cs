@@ -25,7 +25,7 @@ namespace type_test.Controllers{
             return count;
         }
 
-        private static bool IsUserCorrect(int splitQuoteLength, string[] quoteSplit, string[] splitUserTry){
+        private static Tuple<bool, int> IsUserCorrect(int splitQuoteLength, string[] quoteSplit, string[] splitUserTry){
             int count = CompareTry(quoteSplit, splitUserTry);
             if ( (count >= (splitQuoteLength)/2) && (count <= splitQuoteLength) ) {
                 Console.WriteLine("Congrats you nailed");
