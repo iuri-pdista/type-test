@@ -11,3 +11,8 @@
 /home/iuri/Programming/type-test/obj/Debug/netcoreapp3.1/type-test.dll
 /home/iuri/Programming/type-test/obj/Debug/netcoreapp3.1/type-test.pdb
 /home/iuri/Programming/type-test/obj/Debug/netcoreapp3.1/type-test.genruntimeconfig.cache
+/home/iuri/Programming/type-test/obj/Debug/netcoreapp3.1/RefitStubs.g.cs
+/home/iuri/Programming/type-test/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
+/home/iuri/Programming/type-test/bin/Debug/netcoreapp3.1/Refit.dll
+/home/iuri/Programming/type-test/bin/Debug/netcoreapp3.1/System.Text.Json.dll
+/home/iuri/Programming/type-test/obj/Debug/netcoreapp3.1/type-test.csproj.CopyComplete
