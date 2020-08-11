@@ -10,7 +10,7 @@ namespace type_test.Controllers{
             string userTry = ProcessTry(quote);
             var userTrySplit = userTry.Split(" ");
             int userTryLength = userTrySplit.Length;
-            Tuple<bool,int> isUserCorrect = IsUserCorrect(quoteLength, splitQuote, userTrySplit);
+            Tuple<bool,double> isUserCorrect = IsUserCorrect(quoteLength, splitQuote, userTrySplit);
             TypeChallengeModel.SetNewTry(quote, userTry, isUserCorrect.Item1);
             ResultStats results = new ResultStats(quoteLength, isUserCorrect.Item2);
             results.ShowResults();
@@ -25,15 +25,16 @@ namespace type_test.Controllers{
             return count;
         }
 
-        private static Tuple<bool, int> IsUserCorrect(int splitQuoteLength, string[] quoteSplit, string[] splitUserTry){
+        private static Tuple<bool, double> IsUserCorrect(int splitQuoteLength, string[] quoteSplit, string[] splitUserTry){
             int count = CompareTry(quoteSplit, splitUserTry);
             if ( (count >= (splitQuoteLength)/2) && (count <= splitQuoteLength) ) {
                 Console.WriteLine("Congrats you nailed");
-                return new Tuple<bool, int>(true, count);
+                double count_double = Convert.ToDouble(count);
+                return new Tuple<bool, double>(true, count_double);
             }
             else{
                 Console.WriteLine( "You failed, need more training" );
-                return new Tuple<bool, int>(false, count);
+                return new Tuple<bool, double>(false, count);
             }
         }
 
