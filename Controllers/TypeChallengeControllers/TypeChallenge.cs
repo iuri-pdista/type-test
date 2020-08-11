@@ -10,10 +10,10 @@ namespace type_test.Controllers{
             string userTry = ProcessTry(quote);
             var userTrySplit = userTry.Split(" ");
             int userTryLength = userTrySplit.Length;
-            bool isUserCorrect = IsUserCorrect(quoteLength, splitQuote, userTrySplit);
-            TypeChallengeModel.SetNewTry(quote, userTry, isUserCorrect);
-            // ResultStats results = new ResultStats(quoteLength, count);
-            // results.ShowResults();
+            Tuple<bool,int> isUserCorrect = IsUserCorrect(quoteLength, splitQuote, userTrySplit);
+            TypeChallengeModel.SetNewTry(quote, userTry, isUserCorrect.Item1);
+            ResultStats results = new ResultStats(quoteLength, isUserCorrect.Item2);
+            results.ShowResults();
         }
         private static int CompareTry (string[] splitQuote, string[] userTrySplit) {
             int count = 0;
