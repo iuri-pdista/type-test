@@ -8,8 +8,7 @@ namespace type_test
 {
     class Program
     {
-        static async Task Main(string[] args)
-        {
+        static async Task Main() {
             Console.Clear();
             List<QuoteResponse> quoteList = await QuoteGenerate.QuoteListGenerator();
             DateTime start = new DateTime();
